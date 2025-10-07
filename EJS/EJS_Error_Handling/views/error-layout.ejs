@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error - <%= errorData.statusCode %></title>
+</head>
+<body>
+  <% if (errorData.errorType === "NOT_FOUND") { %>
+
+    <h1>Page not found</h1>
+
+   <% } else if (errorData.errorType === "SERVER_ERROR") { %>
+
+    <h1>Internal server error</h1>
+
+   <% } else if (errorData.errorType === "VALIDATION") { %>
+  
+    <h1>Please check your form inputs</h1>
+
+  <% } %>
+
+  <p>Status Code: <%= errorData.statusCode %></p>
+
+  <p>Message: <%= errorData.message %></p>
+
+  <p>Timestamp: <%= errorData.timestamp %></p>
+
+  <% if (errorData.requestUrl) { %>
+
+    <p>Request URL: <%= errorData.requestUrl %></p>
+
+  <% } %> 
+
+  <% if (errorData.errorType === "NOT_FOUND") { %>
+
+    <p>Go back to Home Page</p>
+
+  <% } else if (errorData.errorType === "SERVER_ERROR") { %>
+
+    <p>Try again later</p>
+
+  <% } else if (errorData.errorType === "VALIDATION") { %>
+
+    <p>Fix the highlighted form inputs and resubmit</p>
+    
+  <% } %>
+</body>
+</html>

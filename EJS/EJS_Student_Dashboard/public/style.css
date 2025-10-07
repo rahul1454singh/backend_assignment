@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.header {
+  margin-bottom: 15px;
+}
+
+.admin {
+  color: goldenrod;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.grade-a {
+  color: green;
+  font-weight: bold;
+}
+
+.grade-bc {
+  color: blue;
+  font-weight: bold;
+}
+
+.grade-other {
+  color: red;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+}

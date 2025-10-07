@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="header">
+    <h2><%= student.name %></h2>
+    <p><%= student.email %></p>
+    <% if (student.role === "admin") { %>
+      <span class="admin">★ Admin Access</span>
+    <% } %>
+  </div>
+
+  <h3>Courses</h3>
+  <% if (courses.length) { %>
+    <ul>
+      <% courses.forEach(c => { %>
+        <li>
+          <%= c.title %> — 
+          <% if (c.grade === "A") { %>
+            <span class="grade-a"><%= c.grade %></span>
+          <% } else if (c.grade === "B" || c.grade === "C") { %>
+            <span class="grade-bc"><%= c.grade %></span>
+          <% } else { %>
+            <span class="grade-other"><%= c.grade %></span>
+          <% } %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No courses enrolled yet</p>
+  <% } %>
+
+  <h3>Notice</h3>
+  <p><%= notice %></p>
+  <p><%- notice %></p>
+
+  <%- include("footer") %>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px">
+     <tr>
+        <th>Name</th>
+        <th>Math</th>
+        <th>Science</th>
+        <th>English</th>
+     </tr>
+
+     <% students.forEach((item)=>{ %>
+
+     <tr>
+        <td><%= item.name %></td>
+
+        <% if(item.marks.math < 70){ %>
+
+        <td style="color: red;"><%= item.marks.math %></td>
+
+        <% } else { %>
+
+            <td><%= item.marks.math %></td>
+
+        <% } %>
+
+
+        <td><%= item.marks.science %></td>
+        <td><%= item.marks.english %></td>
+
+     </tr>
+       <% })%>
+    </table>
+</body>
+</html>
