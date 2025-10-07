@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Rahul Singh",
+    "email": "rahul.singh@example.com",
+    "phone": "9876543210",
+    "resume": "resume-1692421234567.pdf",
+    "uploadedAt": "2025-08-18T22:15:30.000Z"
+  },
+  {
+    "name": "Anita Sharma",
+    "email": "anita.sharma@example.com",
+    "phone": "9123456780",
+    "resume": "resume-1692421256789.pdf",
+    "uploadedAt": "2025-08-18T22:17:10.000Z"
+  },
+  {
+    "name": "Rahul",
+    "number": "12342134",
+    "file": "uploads\\resumes\\d6055e1b5a7c741babffe788d6771f22"
+  },
+  {
+    "name": "Gopal",
+    "number": "1234567",
+    "file": "uploads\\resumes\\c25f3d17a16519340abdcf8c6d8f4361"
+  }
+]
