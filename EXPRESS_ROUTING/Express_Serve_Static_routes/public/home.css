@@ -1,0 +1,16 @@
+*{
+    background-color: gray;
+
+}
+h1{
+    color: rgb(17, 11, 22);
+}
+#btn{
+   
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+#btn:hover{
+    color: rgb(1, 1, 22);
+}
