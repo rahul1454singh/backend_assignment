@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="message" placeholder="enter message">
+    <button>send</button>
+    <div id="messageContainer">
+
+    </div>
+    <script src="/socket.io/socket.io.js"></script> 
+    <script>
+        const socket = io()
+        const inp = document.querySelector("input")
+        const btn = document.querySelector("button")
+        const msgCont = document.getElementById("messageContainer")
+
+        socket.on("getAllMessages", (data)=>{
+            msgCont.innerText = ""
+            data.forEach(msg => {
+                
+                 let div = document.createElement("div")
+                let name = document.createElement("h2")
+                name.innerText = msg.userName
+                div.appendChild(name)
+
+                let message = document.createElement("p")
+                message.innerText = msg.message
+                div.appendChild(message)
+
+                msgCont.appendChild(div)
+            });
+        })
+
+        socket.on("notify", (data)=>{
+            alert(data)
+        })
+
+        // fetch("/getAllMessages")
+        // .then(resp => resp.json())
+        // .then(data=>  {
+        //     msgCont.innerText = ""
+        //     data.forEach(data => {
+        //         const p = document.createElement("p")
+        //         p.innerText = data;
+        //         msgCont.appendChild(p)
+        //     });
+        // })
+
+        btn.addEventListener("click", ()=>{
+            // fetch("/sendMessage",{
+            //     method: "POST",
+            //     headers: {
+            //         "Content-Type": 'application/json'
+            //     },
+            //     body: JSON.stringify({message: inp.value})
+            // })
+            // .then(resp => resp.json())
+            // .then(data => {
+            //     const p = document.createElement("p")
+            //     p.innerText = data.message;
+            //     msgCont.appendChild(p)
+
+            // })
+            socket.emit("sendMessage", {
+                userName: localStorage.getItem("name"),
+                message: inp.value
+            })
+        })
+    </script>
+</body>
+</html>
+
+
+
